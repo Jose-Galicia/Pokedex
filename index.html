@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./elements/pokebola2.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a4b5a14363.js" crossorigin="anonymous"></script>
+    <title>Pokedex</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">                      <!Barra de navegacion>
+            <div class="logo-icon">
+                <img src="./elements/pokebola2.png" alt="" height="50px" width="50px">
+                <a href="index.html" class="logo nav-link">Pokedex</a>
+            </div>
+            <button class="nav-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <div class="contenedor-input">
+        <input class="input-class" type="text" placeholder="Enter a name or number" id="pokeName" name="pokename"> <!El id es un identificador para poder usarlo en otras funciones, en este caso en js>
+        <div class="button-class" onclick="fetch2Pokemon()"> Search</div> <!Imprime una funcion definida en js>
+    </div>    
+
+    <section class="contenedor">
+        <div class="cuerpo">
+
+            <div class="parent">
+                <div>
+                    <div class="numero">
+                        <h3>#</h3>
+                        <p id="numero"></p>
+                    </div>
+                    <img class="imagen-poke" src="./elements/pokebola2.png" alt="Pokebola" id="pokeImg" height="400px" width="400px">
+                </div>
+
+                <div class="grid2">
+
+                    <ul class="listas-l">   <!Podria haberse puesto en una display>
+                        <li>
+                            <ul class="lista">
+                                <li>
+                                    <p class="texto-lista">Pokemon: </p> 
+                                </li>
+                                <li>
+                                    <p class="texto-lista2" id="tipo">Name</p> 
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="lista">
+                                <li>
+                                    <p class="texto-lista">Type: </p> 
+                                </li>
+                                <li>
+                                    <p class="texto-lista2" id="type">Name</p> 
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h3 class="about">About</h3>
+                    <div class="parent2">
+                        <div>
+                            <i class="fa-solid fa-scale-balanced about"></i>
+                            <ul class="ul-about">
+                                <li>
+                                    <p id="peso">.</p>
+                                </li>
+                                <li>
+                                    <p>Kg</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-ruler-vertical about"></i>
+                            <ul class="ul-about">
+                                <li>
+                                    <p id="altura">.</p>
+                                </li>
+                                <li>
+                                    <p>M</p>
+                                </li>
+                            </ul>
+                            <div class="vertical"></div>
+                        </div>
+                        <div>
+                            <h4 class="about">Special</h4>
+                            <p class="texto" id="special">Skill</p> 
+                            <div class="vertical"></div>
+                        </div>
+                    </div>
+                    <h3 class="stats">Stats</h3>
+
+                    <div class="parent3">
+                        <div>
+                            <ul class="ul-stats">
+                                <li class="texto-stats">
+                                    <p>HP</p>
+                                </li>
+                                <li class="texto-stats">
+                                    <p>ATK</p>
+                                </li>
+                                <li class="texto-stats">
+                                    <p>DEF</p>
+                                </li>
+                                <li class="texto-stats">
+                                    SATK
+                                </li>
+                                <li class="texto-stats">
+                                    <p>SDEF</p>
+                                </li>
+                                <li class="texto-stats">
+                                    <p>SPD</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <ul class="ul-stats">
+                                <li class="texto-stats">
+                                    <p id="hp">.</p>
+                                </li>
+                                <li class="texto-stats">
+                                    <p id="atk">.</p>
+                                </li>
+                                <li class="texto-stats">
+                                    <p id="def">.</p>
+                                </li>
+                                <li class="texto-stats">
+                                    <p id="satk">.</p> 
+                                </li>
+                                <li class="texto-stats">
+                                    <p id="sdef">.</p>
+                                </li>
+                                <li class="texto-stats">
+                                    <p id="spd">.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>   
+                            <div class="acomodar">
+                            <ul class="ul-stats">
+                                <li class="li-stats">
+                                    <div>
+                                        <div id="Load-bar" class="Load-bar">
+                                            <span id="progress" class="progress"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="li-stats">
+                                    <div>
+                                        <div id="Load-bar" class="Load-bar">
+                                            <span id="progress2" class="progress2"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="li-stats">
+                                    <div>
+                                        <div id="Load-bar" class="Load-bar">
+                                            <span id="progress3" class="progress3"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="li-stats">
+                                    <div>
+                                        <div id="Load-bar" class="Load-bar">
+                                            <span id="progress4" class="progress4"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="li-stats">
+                                    <div>
+                                        <div id="Load-bar" class="Load-bar">
+                                            <span id="progress5" class="progress5"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="li-stats">
+                                    <div>
+                                        <div id="Load-bar" class="Load-bar">
+                                            <span id="progress6" class="progress6"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>   
+    </section>
+    
+</body>
+<footer>
+    <script src="pokedex2.js"></script>
+</footer>
+</html>
